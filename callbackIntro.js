@@ -1,11 +1,16 @@
-// The second argument/parameter is expected to be a function
+
 function findWaldo(arr, found) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === "Waldo") {
-      found([i]);   // execute callback
-    }
-  }
+  arr.forEach(function (name,index){
+  	if (name === "Waldo"){
+  		found(index);
+	}
+  })
 }
+// index = arr.indexOf(i) --> var i was the word itself, when function(i), i = name;
+  //function(name, index) can be passed
+    // if (arr[i] === "Waldo") {
+    //   found([i]);   // execute callback
+    // }
 
 function actionWhenFound(index) {
   console.log(`Found Waldo at index ${index}!`);
@@ -29,3 +34,5 @@ of the changes you have made. An example commit message: Print the index of Wald
 // Read about iterating through elements of an array using JavaScript's Array.prototype.forEach() method.
 
 // Refactor the function findWaldo to use the forEach() method instead of a for loop.
+
+// The second argument/parameter is expected to be a function
